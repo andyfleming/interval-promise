@@ -40,7 +40,7 @@ const options = {
 }
 
 interval(myFunc, options).then(() => {
-    console.log('All iterations complete.)
+    console.log('All iterations complete.')
 })
 ```
 
