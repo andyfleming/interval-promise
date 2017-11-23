@@ -85,7 +85,7 @@ interval(func, intervalLength, [iterations]) // returns Promise<undefined>
 ## API — with advanced options
 
 ```javascript
-interval(func, options)
+interval(func, options) // returns Promise<undefined>
 ```
 
 <table>
