@@ -1,0 +1,26 @@
+{
+  "name": "interval-promise",
+  "version": "0.1.0",
+  "description": "setInterval with setTimeout semantics for promises and async/await",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andyfleming/interval-promise"
+  },
+  "keywords": [
+    "interval",
+    "promise",
+    "setTimeout",
+    "setInterval",
+    "timer",
+    "repeat",
+    "repeatEvery",
+    "async",
+    "await"
+  ],
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andy Fleming <andy@andyfleming.com>",
+  "license": "MIT"
+}
