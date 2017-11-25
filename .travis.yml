@@ -6,5 +6,4 @@ node_js:
   - "7"
   - "6"
 
-after_success:
-  - [[ "$TRAVIS_NODE_VERSION" == "9" ]] && echo "This is version 9"
+after_success: '[[ "$TRAVIS_NODE_VERSION" == "9" ]] && echo "This is version 9"'
