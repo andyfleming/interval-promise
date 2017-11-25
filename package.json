@@ -1,6 +1,6 @@
 {
   "name": "interval-promise",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "setInterval with setTimeout semantics for promises and async/await",
   "repository": {
     "type": "git",
