@@ -1,6 +1,6 @@
 {
   "name": "interval-promise",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "setInterval with setTimeout semantics for promises and async/await",
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "author": "Andy Fleming <andy@andyfleming.com>",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.23.0"
+    "ava": "^0.23.0",
+    "nyc": "^11.3.0"
   }
 }
