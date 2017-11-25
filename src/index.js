@@ -7,6 +7,8 @@
  */
 function interval(func, intervalLength, options = {}) {    
 
+    validateArgs(func, intervalLength, options)
+
     const defaults = {
         iterations: Infinity,
         stopOnError: true
@@ -50,6 +52,12 @@ function interval(func, intervalLength, options = {}) {
 
         callFunction(1)        
     })
+}
+
+function validateArgs(func, intervalLength, options) {
+    if (typeof func !== 'function') {
+        throw new Error('Argument func must be a function. interval(func, intervalLength, options)')
+    }
 }
 
 module.exports = interval
