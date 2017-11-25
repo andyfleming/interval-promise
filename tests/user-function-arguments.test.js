@@ -26,7 +26,7 @@ test.cb('iteration number should have expected result', t => {
 
     let iValues = []
     
-    const userFunc = (i, stop) => {
+    const userFunc = i => {
 
         iValues.push(i)
         

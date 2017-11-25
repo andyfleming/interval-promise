@@ -14,7 +14,7 @@ test.cb('if true, should prevent further execution', t => {
 
     interval(userFunc, 10, {iterations: 3}).then(() => {
         t.fail()
-    }).catch((err) => {
+    }).catch(() => {
         t.pass()
         t.end()
     })
@@ -23,7 +23,7 @@ test.cb('if true, should prevent further execution', t => {
 test.cb('if false, option should prevent interval from stopping', t => {
     t.plan(3)
     
-    const userFunc = i => {
+    const userFunc = () => {
         t.pass()
         
         return Promise.reject()
