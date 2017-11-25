@@ -56,7 +56,7 @@ function interval(func, intervalLength, options = {}) {
 
 function validateArgs(func, intervalLength, options) {
     if (typeof func !== 'function') {
-        throw new Error('Argument func must be a function. interval(func, intervalLength, options)')
+        throw new TypeError('Argument func must be a function. interval(func, intervalLength, options)')
     }
 }
 
