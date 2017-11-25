@@ -1,6 +1,9 @@
 /**
- * @param {function}
- * @param {}
+ * @param {function} func - function to execute
+ * @param {number|function(number):number} intervalLength - length in ms to wait before executing again
+ * @param {{iterations: Infinity|number, stopOnError: boolean}} [options]
+ * 
+ * @returns {Promise} Promise object with no result
  */
 function interval(func, intervalLength, options = {}) {    
 
