@@ -57,7 +57,7 @@ interval(func, intervalLength, options = {}) // returns Promise<undefined>
         <tr>
             <td><code><b>intervalLength</b></code></td>
             <td><i>number | function</i></td>
-            <td><b>Required</b><br>Length in ms to wait between iterations. Should be (or return) a positive integer.<br><br>If a function is used, one parameter <code>iterationNumber</code> is passed.</td>
+            <td><b>Required</b><br>Length in ms to wait between iterations. Should be (or return) a non-negative integer.<br><br>If a function is used, one parameter <code>iterationNumber</code> (starting at 1) is passed.</td>
         </tr>
         <tr>
             <td><code><b>options</b></code></td>
