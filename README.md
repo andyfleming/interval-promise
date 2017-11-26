@@ -76,6 +76,12 @@ interval(func, intervalLength, options = {}) // returns Promise<undefined>
     </tbody>
 </table>
 
+## Project Values
+
+* **Approachability** — Basic usage should be concise and readable.
+* **Debuggability** — Error feedback should be helpful and error handling options should be flexible.
+* **Stability** — Functionality should be well-tested and reliable.
+
 ## Acknowledgements
 
 This library was inspired by [reissue](https://github.com/DonutEspresso/reissue).
