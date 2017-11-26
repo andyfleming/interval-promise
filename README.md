@@ -66,7 +66,7 @@ interval(func, intervalLength, options = {}) // returns Promise<undefined>
         <tr>
             <td><code>options.<b>iterations</b></code></td>
             <td><i>number</i></td>
-            <td><b>Default: </b><code>Infinity</code><br>The number of times to execute the function.</td>
+            <td><b>Default: </b><code>Infinity</code><br>The number of times to execute the function. Must be Infinity or an integer greater than 0.</td>
         </tr>
         <tr>
             <td><code>options.<b>stopOnError</b></code></td>
