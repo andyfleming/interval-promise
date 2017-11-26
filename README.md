@@ -6,6 +6,7 @@
 [![Dependency Status](https://david-dm.org/andyfleming/interval-promise.svg)](https://david-dm.org/andyfleming/interval-promise)
 [![devDependency Status](https://david-dm.org/andyfleming/interval-promise/dev-status.svg)](https://david-dm.org/andyfleming/interval-promise#info=devDependencies)
 [![bitHound Overall Score](https://www.bithound.io/github/andyfleming/interval-promise/badges/score.svg)](https://www.bithound.io/github/andyfleming/interval-promise)
+
 ## Installation
 
 ```bash
