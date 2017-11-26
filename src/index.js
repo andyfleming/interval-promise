@@ -19,11 +19,13 @@ function interval(func, intervalLength, options = {}) {
 
         const callFunction = currentIteration => {
             
+            // Set up a way to track if a "stop" was requested by the user function
             let stopRequested = false
             const stop = () => {
                 stopRequested = true
             }
         
+            // Set up a function to call the next iteration. This is abstracted so it can be called by .then(), or in .catch(), if options allow.
             const callNext = () => {
                 // If we've hit the desired number of iterations, or stop was called, resolve the root promise and return
                 if (currentIteration === settings.iterations || stopRequested) {
@@ -34,12 +36,29 @@ function interval(func, intervalLength, options = {}) {
                 // Otherwise, call the next iteration
                 callFunction(currentIteration + 1)
             }
-        
+
+            // Calculate our interval length
             const calculatedIntervalLength = (typeof intervalLength === 'function') ? intervalLength(currentIteration + 1) : intervalLength
-        
+            
+            // If the interval length was calculated, validate the result
+            if (typeof intervalLength === 'function') {
+                if (!Number.isInteger(calculatedIntervalLength) || calculatedIntervalLength < 0) {
+                    rootPromiseReject(new Error('Function for "intervalLength" argument must return a non-negative integer.'))
+                    return 
+                }
+            }
+                
             // Call the user function after the desired interval length. After, call the next iteration (and/or handle error)
             setTimeout(() => {
-                func(currentIteration, stop).then(callNext).catch(err => {
+
+                const returnVal = func(currentIteration, stop)
+
+                if (!(returnVal instanceof Promise)) {
+                    rootPromiseReject(new Error('Return value of "func" must be a Promise.'))
+                    return
+                }
+
+                returnVal.then(callNext).catch(err => {
                     if (!settings.stopOnError) {
                         callNext()
                         return
@@ -54,9 +73,55 @@ function interval(func, intervalLength, options = {}) {
     })
 }
 
+/**
+ * A helper function to validate the arguments passed to interval(...)
+ * 
+ * @param {*} func 
+ * @param {*} intervalLength 
+ * @param {*} options
+ */
 function validateArgs(func, intervalLength, options) {
+
+    // Validate "func"
     if (typeof func !== 'function') {
-        throw new TypeError('Argument func must be a function. interval(func, intervalLength, options)')
+        throw new TypeError('Argument 1, "func", must be a function.')
+    }
+
+    // Validate "intervalLength"
+    if (typeof intervalLength === 'number') {
+        if (!Number.isInteger(intervalLength) || intervalLength < 0) {
+            throw new TypeError('Argument 2, "intervalLength", must be a non-negative integer or a function that returns a non-negative integer.')
+        }
+    } else if (typeof intervalLength !== 'function') {
+        throw new TypeError('Argument 2, "intervalLength", must be a non-negative integer or a function that returns a non-negative integer.')
+    }
+
+    // Validate options...
+    if (typeof options !== 'object') {
+        throw new TypeError('Argument 3, "options", must be an object.')
+    }
+
+    // Validate passed keys
+    const allowedKeys = ['iterations', 'stopOnError']
+
+    Object.keys(options).forEach(key => {
+        if (!allowedKeys.includes(key)) {
+            throw new TypeError('Option "' + key + '" is not a valid option.')
+        }
+    })
+    
+    // validate "iterations" option (if passed)
+    if (options.hasOwnProperty('iterations')) {
+        if (options.iterations !== Infinity && (!Number.isInteger(options.iterations) || options.iterations < 1)) {
+            throw new TypeError('Option "iterations" must be Infinity or an integer greater than 0.')
+        }
+    }
+    
+    // validate "stopOnError" option (if passed)
+    if (options.hasOwnProperty('stopOnError')) {
+        if (typeof options.stopOnError !== 'boolean') {
+            throw new TypeError('Option "stopOnError" must be a boolean.')
+        }
     }
 }
 
