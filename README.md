@@ -7,6 +7,19 @@
 [![devDependency Status](https://david-dm.org/andyfleming/interval-promise/dev-status.svg)](https://david-dm.org/andyfleming/interval-promise#info=devDependencies)
 [![bitHound Overall Score](https://www.bithound.io/github/andyfleming/interval-promise/badges/score.svg)](https://www.bithound.io/github/andyfleming/interval-promise)
 
+## Overview
+
+This library provides a simple mechanism for running a promise with a given amount of time between executions.
+
+#### Standard Javascript » setInterval()
+
+![traditional interval](https://user-images.githubusercontent.com/721038/33246371-9d0a6e56-d2c8-11e7-9787-cd67354c9f38.png)
+
+#### interval-promise » interval()
+
+![interval promise](https://user-images.githubusercontent.com/721038/33246370-9cf05a20-d2c8-11e7-816c-744ee6b5a094.png)
+
+
 ## Installation
 
 ```bash
