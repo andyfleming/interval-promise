@@ -98,3 +98,34 @@ interval(func, intervalLength, options = {}) // returns Promise<undefined>
 ## Acknowledgements
 
 This library was inspired by [reissue](https://github.com/DonutEspresso/reissue).
+
+## FAQ
+
+### How can I stop the interval from _outside_ the interval function?
+
+There isn't currently direct feature to stop the iterations externally. You can, however, achieve this by checking a variable in the parent scope (of where the function is defined). Check out the code below.
+
+```js
+const interval = require('interval-promise')
+
+let stoppedExternally = false
+const stoppedExternally = () => { stoppedExternally = true }
+
+interval(async (iteration, stop) => {
+
+    if (stoppedExternally) {
+        stop()
+    }
+    
+    // ... normal functionality ...
+    
+}, 1000)
+
+// Some other work...
+someOtherWork().then(() => {
+
+    // Now that our "other work" is done, we can stop our interval above with:
+    stopExternally()
+
+})
+```
