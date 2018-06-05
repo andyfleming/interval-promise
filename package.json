@@ -18,6 +18,7 @@
     "await"
   ],
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "test": "./node_modules/.bin/ava --verbose",
     "lint": "./node_modules/.bin/eslint src/** tests/**",
