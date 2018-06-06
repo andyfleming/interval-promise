@@ -1,6 +1,6 @@
 {
   "name": "interval-promise",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "setInterval with setTimeout semantics for promises and async/await",
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
     "await"
   ],
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "test": "./node_modules/.bin/ava --verbose",
     "lint": "./node_modules/.bin/eslint src/** tests/**",
