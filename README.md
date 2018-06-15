@@ -108,7 +108,7 @@ There isn't currently direct feature to stop the iterations externally. You can,
 const interval = require('interval-promise')
 
 let stoppedExternally = false
-const stoppedExternally = () => { stoppedExternally = true }
+const stopExternally = () => { stoppedExternally = true }
 
 interval(async (iteration, stop) => {
 
