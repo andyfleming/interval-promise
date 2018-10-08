@@ -38,7 +38,7 @@ function interval(func, intervalLength, options = {}) {
             }
 
             // Calculate our interval length
-            const calculatedIntervalLength = (typeof intervalLength === 'function') ? intervalLength(currentIteration + 1) : intervalLength
+            const calculatedIntervalLength = (typeof intervalLength === 'function') ? intervalLength(currentIteration) : intervalLength
             
             // If the interval length was calculated, validate the result
             if (typeof intervalLength === 'function') {
