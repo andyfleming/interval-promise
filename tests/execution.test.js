@@ -1,7 +1,7 @@
 const test = require('ava')
 const interval = require('../src/index')
 
-test.cb('User function sholud be called', t => {
+test.cb('User function should be called', t => {
     t.plan(1)
     
     const userFunc = () => {
@@ -13,7 +13,7 @@ test.cb('User function sholud be called', t => {
     interval(userFunc, 10)
 })
 
-test.cb('User function sholud be called exactly the desired number of iterations', t => {
+test.cb('User function should be called exactly the desired number of iterations', t => {
     t.plan(3)
     
     const userFunc = i => {
