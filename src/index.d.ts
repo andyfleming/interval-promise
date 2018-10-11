@@ -8,7 +8,7 @@ declare module 'interval-promise' {
 	type func = (iterationNumber: number, stop: stop) => Promise<void>;
 	type intervalLengthFn = (iterationNumber: number) => void;
 	type intervalLength = number | intervalLengthFn;
-	export default function interval(
+	export function interval(
 	  func: func,
 	  intervalLength: intervalLength,
 	  options?: IIntervalPromiseOptions
