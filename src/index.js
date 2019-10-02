@@ -52,8 +52,8 @@ function interval(func, intervalLength, options = {}) {
             setTimeout(() => {
 
                 const returnVal = func(currentIteration, stop)
-
-                if (!(returnVal instanceof Promise)) {
+                // Any valid Promise implementation must have a `then` method
+                if (!(returnVal != null && typeof returnVal.then === "function")) {
                     rootPromiseReject(new Error('Return value of "func" must be a Promise.'))
                     return
                 }
