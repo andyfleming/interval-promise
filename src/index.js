@@ -1,4 +1,11 @@
 /**
+ * @param {*} val - value to check
+ * 
+ * @returns {boolean} true if the value is then-able
+ */
+const isPromise = val => (val != null && typeof val.then === "function")
+
+/**
  * @param {function} func - function to execute
  * @param {number|function(number):number} intervalLength - length in ms to wait before executing again
  * @param {{iterations: Infinity|number, stopOnError: boolean}} [options]
@@ -52,8 +59,9 @@ function interval(func, intervalLength, options = {}) {
             setTimeout(() => {
 
                 const returnVal = func(currentIteration, stop)
-
-                if (!(returnVal instanceof Promise)) {
+                
+                // Ensure that the value returned is a promise
+                if (!isPromise(returnVal)) {
                     rootPromiseReject(new Error('Return value of "func" must be a Promise.'))
                     return
                 }
