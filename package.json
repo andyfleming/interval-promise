@@ -21,7 +21,7 @@
   "types": "src/index.d.ts",
   "scripts": {
     "test": "./node_modules/.bin/ava --verbose",
-    "lint": "./node_modules/.bin/eslint src/** tests/**",
+    "lint": "./node_modules/.bin/eslint src/**/*.js tests/**",
     "coverage": "./node_modules/.bin/nyc npm test &&./node_modules/.bin/nyc report --reporter=html"
   },
   "author": "Andy Fleming <andy@andyfleming.com>",
