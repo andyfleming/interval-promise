@@ -3,7 +3,9 @@
  * 
  * @returns {boolean} true if the value is then-able
  */
-const isPromise = val => (val != null && typeof val.then === "function")
+function isPromise(val) {
+    return val != null && typeof val.then === 'function'
+}
 
 /**
  * @param {function} func - function to execute
