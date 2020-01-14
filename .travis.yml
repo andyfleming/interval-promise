@@ -7,7 +7,5 @@ node_js:
   - "10"
   - "9"
   - "8"
-  - "7"
-  - "6"
 
 after_success: '[[ "$TRAVIS_NODE_VERSION" == "9" ]] && ./node_modules/.bin/nyc npm test && ./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
