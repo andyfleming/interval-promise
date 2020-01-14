@@ -119,14 +119,14 @@ function validateArgs(func, intervalLength, options) {
     })
     
     // validate "iterations" option (if passed)
-    if (options.hasOwnProperty('iterations')) {
+    if (typeof options.iterations !== 'undefined') {
         if (options.iterations !== Infinity && (!Number.isInteger(options.iterations) || options.iterations < 1)) {
             throw new TypeError('Option "iterations" must be Infinity or an integer greater than 0.')
         }
     }
     
     // validate "stopOnError" option (if passed)
-    if (options.hasOwnProperty('stopOnError')) {
+    if (typeof options.stopOnError !== 'undefined') {
         if (typeof options.stopOnError !== 'boolean') {
             throw new TypeError('Option "stopOnError" must be a boolean.')
         }
