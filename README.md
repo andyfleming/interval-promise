@@ -3,8 +3,6 @@
 [![NPM Version](https://img.shields.io/npm/v/interval-promise.svg)](https://npmjs.org/package/interval-promise)
 [![Build Status](https://travis-ci.org/andyfleming/interval-promise.svg?branch=master)](https://travis-ci.org/andyfleming/interval-promise)
 [![Coverage Status](https://coveralls.io/repos/github/andyfleming/interval-promise/badge.svg?branch=master)](https://coveralls.io/github/andyfleming/interval-promise?branch=master)
-[![Dependency Status](https://david-dm.org/andyfleming/interval-promise.svg)](https://david-dm.org/andyfleming/interval-promise)
-[![devDependency Status](https://david-dm.org/andyfleming/interval-promise/dev-status.svg)](https://david-dm.org/andyfleming/interval-promise#info=devDependencies)
 
 ## Overview
 
